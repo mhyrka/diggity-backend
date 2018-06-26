@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 const mongoose = require("mongoose")
 
 mongoose
-  .connect("mongodb://mhyrka:diggityPWord69@ds119161.mlab.com:19161/diggity")
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Successfully connected to the database")
   })
