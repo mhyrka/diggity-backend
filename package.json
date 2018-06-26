@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "db:seed": "node ./db/seeds.js",
+    "db:seed": "node ./seeds/seeds.js",
     "test": "mocha"
   },
   "repository": {
