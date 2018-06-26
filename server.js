@@ -1,7 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
-const uri = process.env.MONGODB_URI
+const mongo_uri = process.env.MONGODB_URI
 require("dotenv").config()
 
 // const routes = require("./app/routes/profile.routes.js")
@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 const mongoose = require("mongoose")
 
 mongoose
-  .connect(uri)
+  .connect("mongodb://mhyrka:diggityPWord69@ds119161.mlab.com:19161/diggity")
   .then(() => {
     console.log("Successfully connected to the database")
   })
