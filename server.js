@@ -1,6 +1,8 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
+require("dotenv").config()
+
 // const routes = require("./app/routes/profile.routes.js")
 
 app.use(bodyParser.urlencoded({ extended: true }))
