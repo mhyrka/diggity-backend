@@ -1,4 +1,4 @@
-const Profile = require('../models/profile.model.js');
+const Profile = require("../models/profile.model.js")
 
 // Create and Save a new Profile
 // exports.create = (req, res) => {
@@ -35,51 +35,52 @@ const Profile = require('../models/profile.model.js');
 //
 //   });
 
-  // Save Profile in the database
-  // Profile.save()
-  //     .then(data => {
-  //         res.send(data);
-  //     }).catch(err => {
-  //         res.status(500).send({
-  //             message: err.message || "Some error occurred while creating the Profile."
-  //         });
-  //     });
+// Save Profile in the database
+// Profile.save()
+//     .then(data => {
+//         res.send(data);
+//     }).catch(err => {
+//         res.status(500).send({
+//             message: err.message || "Some error occurred while creating the Profile."
+//         });
+//     });
 // }
 
 // Retrieve and return all profiles from the database.
 exports.findAll = (req, res) => {
   Profile.find()
-      .then(profiles => {
-          res.send(profiles);
-      }).catch(err => {
-          res.status(500).send({
-              message: err.message || "Some error occurred while retrieving notes."
-          });
-      });
-};
+    .then(profiles => {
+      res.send(profiles)
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving profiles."
+      })
+    })
+}
 
 // Find a single profile with a noteId
 exports.findOne = (req, res) => {
   Profile.findById(req.params.profileId)
-      .then(profile => {
-          if(!profile) {
-              return res.status(404).send({
-                  message: "Profile not found with id " + req.params.profileId
-              });
-          }
-          res.send(profile);
-      }).catch(err => {
-          if(err.kind === 'ObjectId') {
-              return res.status(404).send({
-                  message: "Profile not found with id " + req.params.noteId
-              });
-          }
-          return res.status(500).send({
-              message: "Error retrieving profile with id " + req.params.profileId
-          });
-      });
-};
-
+    .then(profile => {
+      if (!profile) {
+        return res.status(404).send({
+          message: "Profile not found with id " + req.params.profileId
+        })
+      }
+      res.send(profile)
+    })
+    .catch(err => {
+      if (err.kind === "ObjectId") {
+        return res.status(404).send({
+          message: "Profile not found with id " + req.params.noteId
+        })
+      }
+      return res.status(500).send({
+        message: "Error retrieving profile with id " + req.params.profileId
+      })
+    })
+}
 
 // Update a note identified by the noteId in the request
 // exports.update = (req, res) => {
