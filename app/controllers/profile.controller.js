@@ -1,5 +1,6 @@
 const Profile = require("../models/profile.model.js")
-
+require("dotenv").config()
+const uri = process.env.MONGODB_URI
 // Create and Save a new Profile
 // exports.create = (req, res) => {
 //   // Validate request

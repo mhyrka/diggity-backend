@@ -1,6 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
+const uri = process.env.MONGODB_URI
 require("dotenv").config()
 
 // const routes = require("./app/routes/profile.routes.js")
@@ -12,7 +13,7 @@ app.use(bodyParser.json())
 const mongoose = require("mongoose")
 
 mongoose
-  .connect("mongodb://localhost:27017/diggity")
+  .connect(uri)
   .then(() => {
     console.log("Successfully connected to the database")
   })
