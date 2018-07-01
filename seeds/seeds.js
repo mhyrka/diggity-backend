@@ -13,8 +13,8 @@ const data = {
           altitude: 0,
           altitudeAccuracy: -1,
           heading: -1,
-          latitude: 39.75321812,
-          longitude: -104.78614374,
+          latitude: 39.733963082,
+          longitude: -104.94510093,
           speed: -1
         }
       },
@@ -38,8 +38,8 @@ const data = {
           altitude: 0,
           altitudeAccuracy: -1,
           heading: -1,
-          latitude: 39.68146399,
-          longitude: -104.99532397,
+          latitude: 39.73327168,
+          longitude: -104.93929409,
           speed: -1
         }
       },
@@ -63,8 +63,8 @@ const data = {
           altitude: 0,
           altitudeAccuracy: -1,
           heading: -1,
-          latitude: 39.66232937,
-          longitude: -104.89177581,
+          latitude: 39.737978647,
+          longitude: -104.93328548,
           speed: -1
         }
       },
@@ -88,8 +88,8 @@ const data = {
           altitude: 0,
           altitudeAccuracy: -1,
           heading: -1,
-          latitude: 39.88633666,
-          longitude: -105.15221538,
+          latitude: 39.73767041,
+          longitude: -104.93017197,
           speed: -1
         }
       },
