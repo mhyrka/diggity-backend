@@ -2,13 +2,28 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
 const mongo_uri = process.env.MONGODB_URI
-require("dotenv").config()
+// var http = require("http")
+// var socketio = require("socket.io")
+//
+// var server = http.Server(app)
+// var websocket = socketio(server)
+// server.listen(4000, () => console.log("listening on *:4000"))
+//
+// var clients = {}
+// var users = {}
+//
+// var chatId = 1
+//
+// websocket.on("connection", socket => {
+//   clients[socket.id] = socket
+//   socket.on("userJoined", userId => onUserJoined(userId, socket))
+//   socket.on("message", message => onMessageReceived(message, socket))
+// })
 
-// const routes = require("./app/routes/profile.routes.js")
+require("dotenv").config()
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-// app.use("/", routes)
 
 const mongoose = require("mongoose")
 
