@@ -21,12 +21,7 @@ const data = {
       image: "https://s3.us-east-2.amazonaws.com/diggity-image-hosting/adorable-animal-bull-160846.jpg",
       friends: [],
       active: true,
-      messages: [
-        {
-          user: "",
-          message: ""
-        }
-      ]
+      messages: []
     },
     {
       name: "Chloe",
@@ -46,12 +41,7 @@ const data = {
       image: "https://s3.us-east-2.amazonaws.com/diggity-image-hosting/animal-collar-dog-8700.jpg",
       friends: [],
       active: true,
-      messages: [
-        {
-          user: "",
-          message: ""
-        }
-      ]
+      messages: []
     },
     {
       name: "Roxanne",
@@ -71,12 +61,7 @@ const data = {
       image: "https://s3.us-east-2.amazonaws.com/diggity-image-hosting/animal-corgi-dog-58997.jpg",
       friends: [],
       active: true,
-      messages: [
-        {
-          user: "",
-          message: ""
-        }
-      ]
+      messages: []
     },
     {
       name: "John Rambo",
@@ -96,12 +81,7 @@ const data = {
       image: "https://s3.us-east-2.amazonaws.com/diggity-image-hosting/animal-dog-golden-retriever-9080.jpg",
       friends: [],
       active: true,
-      messages: [
-        {
-          user: "",
-          message: ""
-        }
-      ]
+      messages: []
     }
   ]
 }
