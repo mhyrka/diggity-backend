@@ -2,21 +2,23 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
 const mongo_uri = process.env.MONGODB_URI
-const app = require("express")()
-const http = require("http").Server(app)
-const io = require("socket.io")(http)
-
-app.get("/", function(req, res) {
-  res.sendfile("index.html")
-})
-
-io.on("connection", function(socket) {
-  console.log("a user connected")
-})
-
-setInterval(() => {
-  io.emit("ping", { data: new Date() / 1 })
-}, 1000)
+// var http = require("http")
+// var socketio = require("socket.io")
+//
+// var server = http.Server(app)
+// var websocket = socketio(server)
+// server.listen(4000, () => console.log("listening on *:4000"))
+//
+// var clients = {}
+// var users = {}
+//
+// var chatId = 1
+//
+// websocket.on("connection", socket => {
+//   clients[socket.id] = socket
+//   socket.on("userJoined", userId => onUserJoined(userId, socket))
+//   socket.on("message", message => onMessageReceived(message, socket))
+// })
 
 require("dotenv").config()
 
