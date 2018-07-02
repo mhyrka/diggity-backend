@@ -84,37 +84,47 @@ exports.findOne = (req, res) => {
 }
 
 // Update a note identified by the noteId in the request
-// exports.update = (req, res) => {
-//   // Validate Request
-//       if(!req.body.content) {
-//           return res.status(400).send({
-//               message: "Profile content can not be empty"
-//           });
-//       }
-//
-//       // Find note and update it with the request body
-//       Profile.findByIdAndUpdate(req.params.noteId, {
-//           title: req.body.title || "Untitled Profile",
-//           content: req.body.content
-//       }, {new: true})
-//       .then(note => {
-//           if(!note) {
-//               return res.status(404).send({
-//                   message: "Profile not found with id " + req.params.noteId
-//               });
-//           }
-//           res.send(note);
-//       }).catch(err => {
-//           if(err.kind === 'ObjectId') {
-//               return res.status(404).send({
-//                   message: "Profile not found with id " + req.params.noteId
-//               });
-//           }
-//           return res.status(500).send({
-//               message: "Error updating note with id " + req.params.noteId
-//           });
-//       });
-// };
+exports.update = (req, res) => {
+  console.log(req.body)
+  // Validate Request
+  if (!req.body) {
+    return res.status(400).send({
+      message: "Message content can not be empty"
+    })
+  }
+
+  // Find note and update it with the request body
+  Profile.findOneAndUpdate(
+    req.params.profileId,
+    {
+      $push: {
+        messages: {
+          user: req.body.user,
+          message: req.body.message
+        }
+      }
+    },
+    { new: true }
+  )
+    .then(note => {
+      if (!note) {
+        return res.status(404).send({
+          message: "Profile not found with id " + req.params.noteId
+        })
+      }
+      res.send(note)
+    })
+    .catch(err => {
+      if (err.kind === "ObjectId") {
+        return res.status(404).send({
+          message: "Profile not found with id " + req.params.noteId
+        })
+      }
+      return res.status(500).send({
+        message: "Error sending message" + req.params.noteId
+      })
+    })
+}
 
 // Delete a note with the specified noteId in the request
 // exports.delete = (req, res) => {
