@@ -94,7 +94,7 @@ exports.update = (req, res) => {
   }
 
   // Find note and update it with the request body
-  Profile.findOneAndUpdate(
+  Profile.findByIdAndUpdate(
     req.params.profileId,
     {
       $push: {
